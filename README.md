@@ -1,46 +1,122 @@
-# Getting Started with Create React App
+# 📡 Data-Driven Visualization Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interactive real-time analytics dashboard built with **PixiJS**, **React**, and **WebSockets**, optimized for rendering and animating thousands of data points efficiently — with dynamic filters, advanced effects, and a sleek dashboard UI.
 
-## Available Scripts
+> Created by [Esraa Albhairy](https://github.com/EsraaSaad298)  
+> 🌐 **Live Demo:** _Coming soon on Netlify_
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project showcases a highly-performant, interactive data visualization tool that simulates **live device/network telemetry** using a WebSocket feed. Nodes are animated on a dynamic 2D canvas using PixiJS with interactive filters, transitions, and real-time performance tracking.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## 🔧 Setup & Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# Clone the repository
+git clone https://github.com/EsraaSaad298/data-visualization-dashboard.git
+cd data-visualization-dashboard
 
-### `npm run build`
+# Install dependencies
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Start the development server
+npm run dev
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> Built with **Vite + React + TypeScript + TailwindCSS**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## ✨ Features
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- 📡 **Live WebSocket Data:** Real-time updates using a live echo server (`wss://ws.postman-echo.com/raw`)
+- 🎨 **PixiJS Rendering:** Smooth, performant 2D canvas rendering with shaders and filters
+- 🔁 **Animated Transitions:** Layout switches (Clustered ↔ Freeform) use smooth GSAP animations
+- 🔍 **Advanced Interaction:** Zoom, pan, hover tooltips, and node click popups
+- 🧠 **Smart Sprite Management:** Only changed nodes update for optimal performance
+- 🎯 **Filters & Sliders:** Realtime filtering by category, status, and time interval
+- 🔊 **Audio Feedback:** Subtle audio cue when a node is deleted (confirmed only)
+- 🌐 **Fully Responsive:** Layout adapts across devices with sticky headers and pixel-perfect visuals
+- 🧩 **Category-Aligned Clustering:** Nodes appear directly under labeled categories
+- 🎛️ **Custom Background & UI Polish:** Overlayed background image, animated shaders, and visual depth
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🧠 Advanced Techniques Used
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 🎨 PixiJS + Shaders
 
-## Learn More
+- Used `PIXI.Graphics`, `generateTexture`, and `Sprite` for performant, dynamic node rendering
+- Applied `@pixi/filter-glow`, `@pixi/filter-blur`, and `DisplacementFilter` for visual FX
+- Background ripple shader simulates movement beneath the canvas
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🔁 Smart Node Diffing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Nodes stored in a `Map<string, Sprite>` and updated only when data changes
+- Uses `useEffect` to control lifecycle and Pixi `Ticker` for frame management
+
+### 🧭 Interactivity & UX
+
+- Smooth pan & zoom behavior via Pixi events
+- DOM tooltips follow pointer, not locked to canvas
+- Custom audio integration using HTML5 `Audio` on delete confirmation
+
+### 🛠️ State & Performance
+
+- Category, status, and time range filters handled in React state
+- Layout modes passed as props to `VisualizationManager`
+- 60 FPS minimum performance target maintained, even with hundreds of nodes
+
+---
+
+## 🖼️ Screenshot
+
+![Dashboard Screenshot](./screenshot.png)
+
+---
+
+## 🌐 Deployment (Netlify)
+
+1. Build your project:
+
+```bash
+npm run build
+```
+
+2. Deploy via:
+
+- ✅ Drag `/dist` folder to [Netlify Drop](https://app.netlify.com/drop)
+- ✅ Or connect repo to Netlify and auto-deploy from `main` branch
+
+Once live, update the link at the top of this README.
+
+---
+
+## 🏆 Bonus Features
+
+- ✅ Delete sound (only on confirmed action)
+- ✅ Custom dropdown icons (🎯 layout modes, 🔴 statuses)
+- ✅ FPS counter in top-right corner
+- ✅ Displacement ripple shader background
+- ✅ Layout transitions between clustered & freeform
+- ✅ Background image with dark overlay for pixel-perfect contrast
+- ✅ Tooltip & sprite optimization for smooth interaction
+
+---
+
+## 🧑‍💻 Author
+
+**Esraa Albhairy**  
+[GitHub → @EsraaSaad298](https://github.com/EsraaSaad298)
+
+---
+
+## 📄 License
+
+This project is open-source and available for review during hiring assessments or collaboration.
+
+---
