@@ -3,7 +3,7 @@
 An interactive real-time analytics dashboard built with **PixiJS**, **React**, and **WebSockets**, optimized for rendering and animating thousands of data points efficiently — with dynamic filters, advanced effects, and a sleek dashboard UI.
 
 > Created by [Esraa Albhairy](https://github.com/EsraaSaad298)  
-> 🌐 **Live Demo:** _Coming soon on Netlify_
+> 🌐 **Live Site:** [https://ubiquitous-kitsune-cf38f0.netlify.app/](https://ubiquitous-kitsune-cf38f0.netlify.app/)
 
 ---
 
@@ -81,16 +81,17 @@ npm run dev
 
 ## 🌐 Deployment (Netlify)
 
-1. Build your project:
+This project is deployed using [Netlify](https://netlify.com) and automatically builds on changes pushed to GitHub.
 
-```bash
-npm run build
+🔧 **Build Settings:**
+
+```
+Build command:      npm run build
+Publish directory:  dist
 ```
 
-2. Deploy via:
-
-- ✅ Drag `/dist` folder to [Netlify Drop](https://app.netlify.com/drop)
-- ✅ Or connect repo to Netlify and auto-deploy from `main` branch
+✅ Continuous Deployment is enabled via the GitHub repo  
+✅ Site auto-rebuilds on every commit to `main`
 
 ---
 
