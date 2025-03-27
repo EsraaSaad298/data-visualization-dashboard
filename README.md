@@ -92,8 +92,6 @@ npm run build
 - ✅ Drag `/dist` folder to [Netlify Drop](https://app.netlify.com/drop)
 - ✅ Or connect repo to Netlify and auto-deploy from `main` branch
 
-Once live, update the link at the top of this README.
-
 ---
 
 ## 🏆 Bonus Features
